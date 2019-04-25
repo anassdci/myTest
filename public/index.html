@@ -22,9 +22,25 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
     <title>React App</title>
   </head>
   <body>
+      <section class="loading-screen">
+          <div class="preloader"></div>
+          <div class="logo-loading">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+          </div>
+          <div class="lds-ripple">
+              <div></div>
+              <div></div>
+          </div>
+          </div>
+      </section>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -37,5 +53,20 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+  //-------------- LOADING--------------------//
+  $(window).on("load", function() {
+    $(".preloader").addClass("complete");
+    $(".lds-ripple , .logo-loading").addClass("dissappear");
+  });
+  //-------------- LOADING--------------------//
+  /*  $(window).resize(function() {
+    location.reload();
+  }); */
+});
+    </script>
   </body>
 </html>
